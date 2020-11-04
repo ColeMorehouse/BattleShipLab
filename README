@@ -1,6 +1,6 @@
 These will be our common agreed on terms
 p1 = player (the user)
-p2 or ai = the ai player
+p2 = the ai player
 p1Board should give p1's board
 p2Board should give the ai's board
 D = destroyer (2 spaces)
