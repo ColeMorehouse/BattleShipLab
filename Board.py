@@ -11,7 +11,7 @@ class Board:
 
 
     def guess(self, r , c):
-        if self.board[r][c]:
+        if self.board[r][c] is not "~":
             self.board[r][c] = "h"
             if self.checkIfSunk() == "nope":
                 return "hit"
