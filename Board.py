@@ -11,7 +11,11 @@ class Board:
 
 
     def guess(self, r , c):
-        if self.board[r][c] is not "~":
+        if r < 0 or r > 9 or c < 0 or c > 9:
+            return "out of bounds"
+        if self.board[r][c] == "h" or self.board[r][c] == "m":
+            return "already guessed"
+        if self.board[r][c] != "~":
             self.board[r][c] = "h"
             if self.checkIfSunk() == "nope":
                 return "hit"
