@@ -8,13 +8,11 @@ class Player:
 
     def placeShips(self, ship, row, col):
         dict = {
-            "n": row > ship.getLength() and row <= 9,
-            "e": col <= 10 - ship.getLength() and col <= 0,
-            "s": row <= 10 - ship.getLength() and row <= 0,
-            "w": col > ship.getLength()-1 and col <= 9
+            "down": row <= 10 - ship.getLength() and row >= 0,
+            "right": col <= 10 - ship.getLength() and col >= 0
         }
         if ship.getType() == "D":
-
+            
         if ship.getType() == "S" or ship.type == "C":
 
         if ship.getType() == "B":
