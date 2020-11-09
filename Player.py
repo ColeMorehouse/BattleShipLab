@@ -6,20 +6,24 @@ class Player:
         self.board1 = b1
         self.board2 = b2
 
-    def placeShips(self, ship, row, col):
-        dict = {
-            "n": row > ship.getLength() and row <= 9,
-            "e": col <= 10 - ship.getLength() and col <= 0,
-            "s": row <= 10 - ship.getLength() and row <= 0,
-            "w": col > ship.getLength()-1 and col <= 9
-        }
-        if ship.getType() == "D":
-
-        if ship.getType() == "S" or ship.type == "C":
-
-        if ship.getType() == "B":
-
-        if ship.getType() == "A":
+    def setUpBoard(self):
+        ddirect = input("Enter direction of Destroyer: ")
+        dest = Ship("D", ddirect)
+        dposx = input("Enter x coordinate of Destroyer: ")
+        dposy = input("Enter y coordinate of Destroyer: ")
+        placeShip(dest,dposx, dposy)
+        
+        sdirect = input("Enter direction of Submarine: ")
+        sub = Ship("S",sdirect)
+        sposx = input("Enter x coordinate of Submarine: ")
+        sposy = input("Enter y coordinate of Submarine: ")
+        placeShip(sub,sposx, sposy)
+        
+        cdirect = input("Enter direction of Cruiser: ")
+        cruise = Ship("C",cdirect)
+        cposx = input("Enter x coordinate of Cruiser: ")
+        cposy = input("Enter y coordinate of Cruiser: ")
+        placeShip(cruise,cposx, cposy)
 
 
     def recieveGuess(self, row, column):
