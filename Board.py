@@ -1,5 +1,5 @@
 class Board:
-    def __innit__(self):
+    def __init__(self):
         board = []
         for x in range(10):
             board.append(["~","~","~","~","~","~","~","~","~","~"])
@@ -32,6 +32,7 @@ class Board:
         for x in self.board:
             for y in self.board[x]:
                 if self.board[x][y] == "B":
+                    pass
         if count == 0 and self.battleship:
             self.battleship = False
             return("battleship sunk")
@@ -76,4 +77,5 @@ class Board:
         return "nope"
 
     def placeShip(self, s):
+        pass
 

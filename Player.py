@@ -14,16 +14,19 @@ class Player:
             "w": col > ship.getLength()-1 and col <= 9
         }
         if ship.getType() == "D":
+            pass
 
         if ship.getType() == "S" or ship.type == "C":
+            pass
 
         if ship.getType() == "B":
+            pass
 
         if ship.getType() == "A":
-
+            pass
 
     def recieveGuess(self, row, column):
-        answer = guess(row, column)
+        answer = self.guess(row, column)
         return answer
 
     def guessSpace(self):

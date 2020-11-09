@@ -1,4 +1,4 @@
-class ships:
+class Ships:
 
     def __init__(self, t, d):
         type = t
