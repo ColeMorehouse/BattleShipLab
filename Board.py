@@ -78,7 +78,6 @@ class Board:
 
         return "nope"
 
-    def placeShip(self, s):
     def placeShip(self, s, x, y):
         if s.getDirection() == "down" and y + s.getLength() > 10:
             return "invalid location"
