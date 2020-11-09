@@ -1,3 +1,5 @@
+from Ships import ships
+
 class Board:
     def __innit__(self):
         board = []
@@ -32,6 +34,7 @@ class Board:
         for x in self.board:
             for y in self.board[x]:
                 if self.board[x][y] == "B":
+                    count += 1
         if count == 0 and self.battleship:
             self.battleship = False
             return("battleship sunk")
@@ -76,4 +79,34 @@ class Board:
         return "nope"
 
     def placeShip(self, s):
+    def placeShip(self, s, x, y):
+        if s.getDirection() == "down" and y + s.getLength() > 10:
+            return "invalid location"
+        elif s.getDirection() == "right" and x + s.getLength() > 10:
+            return "invalid location"
+        elif x < 0 or y < 0:
+            return "invalid location"
 
+        good = True
+
+        if s.getDirection() == "down":
+            for a in range(s.getLength()):
+                if self.board[y+a-1][x] != "~":
+                    good = False
+            if not good:
+                return "invalid location"
+            else:
+                for b in range(s.getLength()):
+                    self.board[y+a-1][x] = s.getType()
+                return "changes have been made"
+
+        if s.getDirection() == "right":
+            for a in range(s.getLength()):
+                if self.board[y][x+a-1] != "~":
+                    good = False
+            if not good:
+                return "invalid location"
+            else:
+                for b in range(s.getLength()):
+                    self.board[y][x+a-1] = s.getType()
+                return "changes have been made"
