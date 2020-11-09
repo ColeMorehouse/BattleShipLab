@@ -7,7 +7,8 @@ class Player:
         self.board2 = b2
 
     def setUpBoard(self):
-        
+        ddirect = input("Enter direction of Destroyer: ")
+        dest = Ship("D", up, ddirect)
 
 
     def recieveGuess(self, row, column):
