@@ -11,31 +11,33 @@ class Board:
 
 
     def guess(self, r , c):
-        if r < 0 or r > 9 or c < 0 or c > 9:
+        if r < 0 or r > 9 or c < 0 or c > 9:#out of bounds
             return "out of bounds"
-        if self.board[r][c] == "h" or self.board[r][c] == "m":
+        if self.board[r][c] == "h" or self.board[r][c] == "m":#already guessed
             return "already guessed"
-        if self.board[r][c] != "~":
+        if self.board[r][c] != "~":#hit
             self.board[r][c] = "h"
-            if self.checkIfSunk() == "nope":
+            if self.checkIfSunk() == "nope":#hit and not sunk
                 return "hit"
-            else:
+            else:#hit and sunk
                 return self.checkIfSunk()
-        else:
+        else:#miss
             self.board[r][c] = "m"
             return "miss"
 
     def checkIfSunk(self):
         count = 0
+
+        #check for battlship
         for x in self.board:
             for y in self.board[x]:
                 if self.board[x][y] == "B":
-                    count += 1
         if count == 0 and self.battleship:
             self.battleship = False
-            return("battleshp sunk")
+            return("battleship sunk")
         count = 0
 
+        #check for destroyer
         for x in self.board:
             for y in self.board[x]:
                 if self.board[x][y] == "D":
@@ -44,6 +46,7 @@ class Board:
             self.destroyer = False
             return("destroyer sunk")
 
+        #check for submarine
         for x in self.board:
             for y in self.board[x]:
                 if self.board[x][y] == "S":
@@ -52,6 +55,7 @@ class Board:
             self.submarine = False
             return("submarine sunk")
 
+        #check for cruiser
         for x in self.board:
             for y in self.board[x]:
                 if self.board[x][y] == "C":
@@ -60,6 +64,7 @@ class Board:
             self.cruiser = False
             return("cruiser sunk")
 
+        #check for aircraft Carrier
         for x in self.board:
             for y in self.board[x]:
                 if self.board[x][y] == "A":
