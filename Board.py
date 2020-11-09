@@ -75,4 +75,5 @@ class Board:
 
         return "nope"
 
-
+    def placeShip(self, shipType, x, y):
+        return
