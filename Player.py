@@ -8,7 +8,22 @@ class Player:
 
     def setUpBoard(self):
         ddirect = input("Enter direction of Destroyer: ")
-        dest = Ship("D", up, ddirect)
+        dest = Ship("D", ddirect)
+        dposx = input("Enter x coordinate of Destroyer: ")
+        dposy = input("Enter y coordinate of Destroyer: ")
+        placeShip(dest,dposx, dposy)
+        
+        sdirect = input("Enter direction of Submarine: ")
+        sub = Ship("S",sdirect)
+        sposx = input("Enter x coordinate of Submarine: ")
+        sposy = input("Enter y coordinate of Submarine: ")
+        placeShip(sub,sposx, sposy)
+        
+        cdirect = input("Enter direction of Cruiser: ")
+        cruise = Ship("C",cdirect)
+        cposx = input("Enter x coordinate of Cruiser: ")
+        cposy = input("Enter y coordinate of Cruiser: ")
+        placeShip(cruise,cposx, cposy)
 
 
     def recieveGuess(self, row, column):
