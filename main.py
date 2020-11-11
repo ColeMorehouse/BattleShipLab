@@ -14,3 +14,8 @@ player1 = Player(p1b, p1gb)
 #Create player 1 and player 2
 player2 = p2(p2b, p2gb)
 
+notwin = true
+
+while notwin:
+  yield
+ # add shit here
