@@ -9,8 +9,6 @@ class Board:
         battleship  = True
         aircraftCarrier = True
 
-    def getBoard(self):
-        return board
 
     def guess(self, r , c):
         if r < 0 or r > 9 or c < 0 or c > 9:
@@ -103,23 +101,3 @@ class Board:
                 for b in range(s.getLength()):
                     self.board[y][x + a - 1] = s.getType()
                 return "changes have been made"
-
-class gBoard:
-    def __innit__(self, bE):
-        targetBoard = bE
-        gB = []
-        for x in range(10):
-            gB.append(["~","~","~","~","~","~","~","~","~","~"])
-
-    def doGuess(self, r, c):
-        g = targetBoard.guess(r, c)
-        if g == "miss":
-            gB[c][r] = "O"
-            return
-        elif g ==  "out of bounds" or g == "already guessed":
-            return
-        else:
-            gB[c][r] = "x"
-
-    def getGB(self):
-        return gB
