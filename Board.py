@@ -120,15 +120,13 @@ class gBoard:
         for x in gB:
             print(x)
         
-    def doGuess(self, r, c, target):
-        g = target.guess(r, c)
-        if g == "miss":
-            gB[c][r] = "O"
-            return
-        elif g ==  "out of bounds" or g == "already guessed":
-            return
-        else:
-            gB[c][r] = "x"
+    def doGuess(self, target):
+        for y in target.getBoard():
+            for x in y:
+                if(target.getBoard[y][x] == "h"):
+                    gB[y][x] = "X"
+                if(target.getBoard[y][x] == "m"):
+                    gB[y][x] = "O"
 
     def getGB(self):
         return gB
