@@ -1,4 +1,4 @@
-rom board import board
+from board import board
 from ships import ships
 
 class Player:
