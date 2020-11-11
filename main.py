@@ -1,4 +1,5 @@
 from Board import Board
+from Ships import Ships
 from Player import Player
 
 
@@ -13,6 +14,9 @@ player1 = Player(p1b, p1gb)
 #Create a hidden board for player 1 and player 2
 #Create player 1 and player 2
 player2 = p2(p2b, p2gb)
+
+player1.setUpBoard()
+player2.setUpBoard()
 
 notwin = true
 
