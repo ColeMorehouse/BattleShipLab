@@ -8,6 +8,13 @@ class Board:
         cruiser = True
         battleship  = True
         aircraftCarrier = True
+  
+    def getBoard(self):
+        return board
+
+    def printBoard(self):
+        for x in board:
+            print(x)
 
 
     def guess(self, r , c):
