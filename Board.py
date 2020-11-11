@@ -106,7 +106,7 @@ class Board:
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
-                    self.board[y][x + a - 1] = s.getType()
+                    self.board[x + b - 1][y] = s.getType()
                 return "changes have been made"
 
             
