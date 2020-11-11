@@ -111,14 +111,17 @@ class Board:
 
             
 class gBoard:
-    def __innit__(self, bE):
-        targetBoard = bE
+    def __innit__(self):
         gB = []
         for x in range(10):
             gB.append(["~","~","~","~","~","~","~","~","~","~"])
 
-    def doGuess(self, r, c):
-        g = targetBoard.guess(r, c)
+    def printGB(self):
+        for x in gB:
+            print(x)
+        
+    def doGuess(self, r, c, target):
+        g = target.guess(r, c)
         if g == "miss":
             gB[c][r] = "O"
             return
