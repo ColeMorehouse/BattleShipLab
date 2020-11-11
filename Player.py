@@ -52,14 +52,3 @@ class Player:
         aposx = input("Enter x coordinate of Aircraft Carrier: ")
         aposy = input("Enter y coordinate of Aircraft Carrier: ")
         b1.placeShip(aircraft, aposx, aposy)
-
-
-    def recieveGuess(self, row, column):
-        answer = b1.guess(row, column)
-        return answer
-
-    def guessSpace(self):
-        row = input("Enter row of guess: ")
-        column = input("Enter column of guess: ")
-        listGuess = {row, column}
-        return listGuess
