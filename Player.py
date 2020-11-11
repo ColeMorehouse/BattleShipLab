@@ -39,7 +39,7 @@ class Player:
 
 
     def recieveGuess(self, row, column):
-        answer = guess(row, column)
+        answer = b1.guess(row, column)
         return answer
 
     def guessSpace(self):
