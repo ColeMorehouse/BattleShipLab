@@ -3,7 +3,7 @@ from Player import Player
 
 
 #Create a board for player 1 and player
-b1h = Board()
+b1h = Board() #test changegit
 b1v = Board()
 
 b2h = Board()
