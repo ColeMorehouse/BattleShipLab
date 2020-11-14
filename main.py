@@ -1,5 +1,6 @@
 from Board import Board
 from Player import Player
+from ai import ai
 
 
 #Create a board for player 1 and player
@@ -13,4 +14,4 @@ player1 = Player(b1h, b1v)
 #Create a hidden board for player 1 and player 2
 #Create player 1 and player 2
 
-player2 = p2(b2h, b1v)
+player2 = ai(b2h, b2v)

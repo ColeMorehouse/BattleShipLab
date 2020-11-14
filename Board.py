@@ -1,5 +1,5 @@
 class Board:
-    def __innit__(self):
+    def __init__(self):
         board = []
         for x in range(10):
             board.append(["~","~","~","~","~","~","~","~","~","~"])
@@ -10,10 +10,10 @@ class Board:
         aircraftCarrier = True
   
     def getBoard(self):
-        return board
+        return self.board
 
     def printBoard(self):
-        for x in board:
+        for x in self.board:
             print(x)
 
 
@@ -111,22 +111,22 @@ class Board:
 
             
 class gBoard:
-    def __innit__(self, bE):
+    def __init__(self, bE):
         targetBoard = bE
         gB = []
         for x in range(10):
             gB.append(["~","~","~","~","~","~","~","~","~","~"])
 
     def doGuess(self, r, c):
-        g = targetBoard.guess(r, c)
+        g = self.targetBoard.guess(r, c)
         if g == "miss":
-            gB[c][r] = "O"
+            self.gB[c][r] = "O"
             return
         elif g ==  "out of bounds" or g == "already guessed":
             return
         else:
-            gB[c][r] = "x"
+            self.gB[c][r] = "x"
 
     def getGB(self):
-        return gB
+        return self.gB
             
