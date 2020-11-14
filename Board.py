@@ -106,27 +106,26 @@ class Board:
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
-                    self.board[y][x + b - 1] = s.getType()
+                    self.board[y][x + a - 1] = s.getType()
                 return "changes have been made"
 
             
 class gBoard:
-    def __innit__(self):
+    def __innit__(self, bE):
+        targetBoard = bE
         gB = []
         for x in range(10):
             gB.append(["~","~","~","~","~","~","~","~","~","~"])
 
-    def printGB(self):
-        for x in gB:
-            print(x)
-        
-    def doGuess(self, target):
-        for y in target.getBoard():
-            for x in y:
-                if(target.getBoard[y][x] == "h"):
-                    gB[y][x] = "X"
-                if(target.getBoard[y][x] == "m"):
-                    gB[y][x] = "O"
+    def doGuess(self, r, c):
+        g = targetBoard.guess(r, c)
+        if g == "miss":
+            gB[c][r] = "O"
+            return
+        elif g ==  "out of bounds" or g == "already guessed":
+            return
+        else:
+            gB[c][r] = "x"
 
     def getGB(self):
         return gB
