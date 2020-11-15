@@ -1,3 +1,5 @@
+from ships import ships
+
 class Board:
     def __init__(self):
         self.board = []

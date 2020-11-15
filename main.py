@@ -1,19 +1,20 @@
 from Board import Board
+from Board import gBoard
 from Player import Player
 from ai import ai
 
 
 #Create a board for player 1 and player
-b1h = Board()
-b1v = Board()
+b1 = Board()
+b2 = Board()
 
-b2h = Board()
-b2v = Board()
+b1g = gBoard(b2)
+b2g = gBoard(b1)
 
-player1 = Player(b1h, b1v)
+player1 = Player(b1, b1g)
 #Create a hidden board for player 1 and player 2
 #Create player 1 and player 2
 
 
-player2 = ai(b2h, b2v)
+player2 = ai(b2, b2g)
 player2.getBoard().printBoard()

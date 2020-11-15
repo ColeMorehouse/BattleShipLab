@@ -1,5 +1,5 @@
 from Board import Board
-from Ships import ships
+from ships import ships
 
 class Player:
     def __init__(self, b1, b2):
