@@ -6,7 +6,7 @@ class ai:
 
     def keepPlacing(self, ship):
         while (True):
-            if (self.Board.placeShip(self.ship, random.randint(0, 9), random.randint(0, 9)) == "Invalid Guess"):
+            if (self.Board.placeShip(self.ship, random.randint(0, 9), random.randint(0, 9)) == "invalid location"):
                 continue
             else:
                 break
