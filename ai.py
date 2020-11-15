@@ -1,5 +1,5 @@
 from Board import Board
-from ships import ships
+from Ships import ships
 import random
 
 class ai:
