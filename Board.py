@@ -131,4 +131,8 @@ class gBoard:
 
     def getGB(self):
         return self.gB
+
+    def printGB(self):
+        for x in self.board:
+            print(x)
             
