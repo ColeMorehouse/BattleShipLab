@@ -1,8 +1,8 @@
 class ships:
 
     def __init__(self, t, d):
-        type = t
-        direction = d
+        self.type = t
+        self.direction = d
         lengths = {
             "D": 2,
             "S": 3,
@@ -10,7 +10,7 @@ class ships:
             "B": 4,
             "A": 5
         }
-        length = lengths[t]
+        self.length = lengths[t]
 
     def getLength(self):
         return self.length

@@ -14,4 +14,6 @@ player1 = Player(b1h, b1v)
 #Create a hidden board for player 1 and player 2
 #Create player 1 and player 2
 
+
 player2 = ai(b2h, b2v)
+player2.getBoard().printBoard()

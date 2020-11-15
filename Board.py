@@ -1,8 +1,8 @@
 class Board:
     def __init__(self):
-        board = []
+        self.board = []
         for x in range(10):
-            board.append(["~","~","~","~","~","~","~","~","~","~"])
+            self.board.append(["~","~","~","~","~","~","~","~","~","~"])
         destroyer = True
         submarine = True
         cruiser = True
@@ -78,9 +78,9 @@ class Board:
         return "nope"
 
     def placeShip(self, s, x, y):
-        if s.getDirection() == "down" and y + s.getLength() > 10:
+        if s.getDirection() == "down" and y + s.getLength() > 8:
             return "invalid location"
-        elif s.getDirection() == "right" and x + s.getLength() > 10:
+        elif s.getDirection() == "right" and x + s.getLength() > 8:
             return "invalid location"
         elif x < 0 or y < 0:
             return "invalid location"
@@ -95,7 +95,7 @@ class Board:
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
-                    self.board[y + a - 1][x] = s.getType()
+                    self.board[y + b - 1][x] = s.getType()
                 return "changes have been made"
 
         if s.getDirection() == "right":
@@ -106,7 +106,7 @@ class Board:
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
-                    self.board[y][x + a - 1] = s.getType()
+                    self.board[y][x + b - 1] = s.getType()
                 return "changes have been made"
 
             
