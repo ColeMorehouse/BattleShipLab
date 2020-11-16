@@ -25,7 +25,7 @@ class ai:
 
     def keepPlacing(self, ship, board):
         while (True):
-            if board.placeShip(ship, random.randint(1, 9), random.randint(1, 9)) == "invalid location":
+            if board.placeShip(ship, random.randint(0, 9), random.randint(0, 9)) == "invalid location":
                 continue
             else:
                 break

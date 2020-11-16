@@ -1,4 +1,4 @@
-from ships import ships
+from Ships import ships
 
 class Board:
     def __init__(self):
@@ -80,9 +80,12 @@ class Board:
         return "nope"
 
     def placeShip(self, s, x, y):
-        if s.getDirection() == "down" and y + s.getLength() > 8:
+        x = int(x)
+        y = int(y)
+        if s.getDirection() == "down" and y + s.getLength() > 9:
+            print(s.getLength())
             return "invalid location"
-        elif s.getDirection() == "right" and x + s.getLength() > 8:
+        elif s.getDirection() == "right" and x + s.getLength() > 9:
             return "invalid location"
         elif x < 0 or y < 0:
             return "invalid location"
@@ -91,33 +94,33 @@ class Board:
 
         if s.getDirection() == "down":
             for a in range(s.getLength()):
-                if self.board[y + a - 1][x] != "~":
+                if self.board[y + a][x] != "~":
                     good = False
             if not good:
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
-                    self.board[y + b - 1][x] = s.getType()
+                    self.board[y + b][x] = s.getType()
                 return "changes have been made"
 
         if s.getDirection() == "right":
             for a in range(s.getLength()):
-                if self.board[y][x + a - 1] != "~":
+                if self.board[y][x + a] != "~":
                     good = False
             if not good:
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
-                    self.board[y][x + b - 1] = s.getType()
+                    self.board[y][x + b] = s.getType()
                 return "changes have been made"
 
             
 class gBoard:
     def __init__(self, bE):
-        targetBoard = bE
-        gB = []
+        self.targetBoard = bE
+        self.gB = []
         for x in range(10):
-            gB.append(["~","~","~","~","~","~","~","~","~","~"])
+            self.gB.append(["~","~","~","~","~","~","~","~","~","~"])
 
     def doGuess(self, r, c):
         g = self.targetBoard.guess(r, c)
@@ -129,10 +132,10 @@ class gBoard:
         else:
             self.gB[c][r] = "x"
 
-    def getGB(self):
+    def getGb(self):
         return self.gB
 
-    def printGB(self):
-        for x in self.board:
+    def printGb(self):
+        for x in self.gB:
             print(x)
             
