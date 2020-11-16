@@ -8,6 +8,7 @@ class Player:
 
     def setUpBoard(self):
 
+        self.board1.printBoard()
         check = False
         while not check:
             ddirect = input("Enter direction of Destroyer: ")
@@ -18,6 +19,7 @@ class Player:
                 if self.board1.placeShip(dest,dposx, dposy) != "invalid location":
                     check = True
 
+        self.board1.printBoard()
         check = False
         while not check:
             sdirect = input("Enter direction of Submarine: ")
@@ -28,6 +30,7 @@ class Player:
                 if self.board1.placeShip(sub,sposx, sposy) != "invalid location":
                     check = True
 
+        self.board1.printBoard()
         check = False
         while not check:
             cdirect = input("Enter direction of Cruiser: ")
@@ -38,6 +41,7 @@ class Player:
                 if self.board1.placeShip(cruise,cposx, cposy) != "invalid location":
                     check = True
 
+        self.board1.printBoard()
         check = False
         while not check:
             bdirect = input("Enter direction of BattleShip: ")
@@ -48,6 +52,7 @@ class Player:
                 if self.board1.placeShip(battle, bposx, bposy) != "invalid location":
                     check = True
 
+        self.board1.printBoard()
         check = False
         while not check:
             adirect = input("Enter direction of Aircraft Carrier: ")
