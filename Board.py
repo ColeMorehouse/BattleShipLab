@@ -42,7 +42,7 @@ class Board:
                     count += 1
         if count == 0 and self.battleship:
             self.battleship = False
-            return("battleshp sunk")
+            return("battleship sunk")
         count = 0
 
         for x in self.board:
@@ -83,7 +83,6 @@ class Board:
         x = int(x)
         y = int(y)
         if s.getDirection() == "down" and y + s.getLength() > 9:
-            print(s.getLength())
             return "invalid location"
         elif s.getDirection() == "right" and x + s.getLength() > 9:
             return "invalid location"
