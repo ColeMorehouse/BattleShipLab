@@ -1,8 +1,8 @@
-These will be our common agreed on terms
-p1 = player (the user)
-p2 = the ai player
-p1Board should give p1's board
-p2Board should give the ai's board
+These will be our common agreed on terms in the main
+player1 = player (the user)
+player2 = the ai player
+b1 = the player's board
+b2 = the ai's board
 D = destroyer (2 spaces)
 S = submarine (3 spaces)
 C = cruiser (3 spaces)
@@ -10,4 +10,33 @@ B = battleship (4 spaces)
 A = aircraft carrier (5 spaces)
 boards are 10x10 arrays
 0,0 is the top left corner, 9,9 is the bottom right
-cords work as follows. (y, x), since y arrays will be the outer ones.
+
+Methods:
+Board.py:
+    Board()
+        getBoard()
+        printBoard()
+        guess()
+        checkIfSunk()
+        placeShip()
+    gBoard()
+        doGuess()
+        getGb()
+        printGb()
+Player.py
+    Player()
+        setUpBoard()
+        recieveGuess()
+        guessSpace()
+        getB1()
+        getGb()
+Ships.py
+    ships()
+        getLength()
+        getType()
+        getDirection()
+ai.py
+    ai()
+        keepPlacing()
+        getBoard()
+    LoR()
