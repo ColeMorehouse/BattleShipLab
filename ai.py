@@ -31,7 +31,8 @@ class ai:
                 break
     def getBoard(self):
         return self.board1
-
+    def getGBoard(self):
+        return self.board2
 
 
 
