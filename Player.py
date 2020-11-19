@@ -18,6 +18,8 @@ class Player:
                 dposy = input("Enter y coordinate of Destroyer: ")
                 if self.board1.placeShip(dest,dposx, dposy) != "invalid location":
                     check = True
+                else:
+                    print("invalid location")
 
         self.board1.printBoard()
         check = False
@@ -29,6 +31,8 @@ class Player:
                 sposy = input("Enter y coordinate of Submarine: ")
                 if self.board1.placeShip(sub,sposx, sposy) != "invalid location":
                     check = True
+                else:
+                    print("invalid location")
 
         self.board1.printBoard()
         check = False
@@ -40,6 +44,8 @@ class Player:
                 cposy = input("Enter y coordinate of Cruiser: ")
                 if self.board1.placeShip(cruise,cposx, cposy) != "invalid location":
                     check = True
+                else:
+                    print("invalid location")
 
         self.board1.printBoard()
         check = False
@@ -51,6 +57,8 @@ class Player:
                 bposy = input("Enter y coordinate of BattleShip: ")
                 if self.board1.placeShip(battle, bposx, bposy) != "invalid location":
                     check = True
+                else:
+                    print("invalid location")
 
         self.board1.printBoard()
         check = False
@@ -62,6 +70,8 @@ class Player:
                 aposy = input("Enter y coordinate of Aircraft Carrier: ")
                 if self.board1.placeShip(aircraft, aposx, aposy) != "invalid location":
                     check = True
+                else:
+                    print("invalid location")
 
 
     def recieveGuess(self, row, column):
