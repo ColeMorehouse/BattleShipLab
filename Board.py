@@ -83,10 +83,13 @@ class Board:
         x = int(x)
         y = int(y)
         if s.getDirection() == "down" and y + s.getLength() > 9:
+            print("invalid location")
             return "invalid location"
         elif s.getDirection() == "right" and x + s.getLength() > 9:
+            print("invalid location")
             return "invalid location"
         elif x < 0 or y < 0:
+            print("invalid location")
             return "invalid location"
 
         good = True
@@ -96,6 +99,7 @@ class Board:
                 if self.board[y + a][x] != "~":
                     good = False
             if not good:
+                print("invalid location")
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
@@ -107,6 +111,7 @@ class Board:
                 if self.board[y][x + a] != "~":
                     good = False
             if not good:
+                print("invalid location")
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
