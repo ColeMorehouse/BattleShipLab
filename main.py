@@ -45,7 +45,7 @@ while not win:
     player1.guessSpace(row, col, player2.getGBoard())
 
     printEverything()
-    if b2.checkWin() == True:
+    if player2.getBoard().checkWin() == True:
         print("User player wins!!!")
         win = True
         exit()
@@ -55,7 +55,7 @@ while not win:
     player2.guessSpace(player1.getGb())
 
     printEverything()
-    if b1.checkWin() == True:
+    if player1.getB1().checkWin() == True:
         print("AI player wins!!!")
         win = True
         exit()
