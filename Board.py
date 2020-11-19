@@ -99,6 +99,7 @@ class Board:
                 if self.board[y + a][x] != "~":
                     good = False
             if not good:
+                print("invalid location")
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
@@ -110,6 +111,7 @@ class Board:
                 if self.board[y][x + a] != "~":
                     good = False
             if not good:
+                print("invalid location")
                 return "invalid location"
             else:
                 for b in range(s.getLength()):
