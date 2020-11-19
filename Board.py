@@ -18,6 +18,11 @@ class Board:
         for x in self.board:
             print(x)
 
+    def checkWin(self):
+        if not self.destroyer and not self.submarine and not self.cruiser and not self.battleship and not self.aircraftCarrier:
+            return True
+        else:
+            return False
 
     def guess(self, r , c):
         if r < 0 or r > 9 or c < 0 or c > 9:
