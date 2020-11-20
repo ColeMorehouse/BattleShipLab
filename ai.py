@@ -29,10 +29,19 @@ class ai:
                 continue
             else:
                 break
+
     def getBoard(self):
         return self.board1
+
     def getGBoard(self):
         return self.board2
+
+    def guessSpace(self):
+        self.board1.guess(random.randint(0,9), random.randint(0,9))
+        self.board2.doGuess(random.randint(0,9), random.randint(0,9))
+
+
+
 
 
 

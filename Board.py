@@ -18,11 +18,6 @@ class Board:
         for x in self.board:
             print(x)
 
-    def checkWin(self):
-        if not self.destroyer and not self.submarine and not self.cruiser and not self.battleship and not self.aircraftCarrier:
-            return True
-        else:
-            return False
 
     def guess(self, r , c):
         if r < 0 or r > 9 or c < 0 or c > 9:
@@ -41,8 +36,8 @@ class Board:
 
     def checkIfSunk(self):
         count = 0
-        for x in self.board:
-            for y in self.board[x]:
+        for x in range(len(self.board)):
+            for y in range(len(self.board[x])):
                 if self.board[x][y] == "B":
                     count += 1
         if count == 0 and self.battleship:
@@ -50,32 +45,32 @@ class Board:
             return("battleship sunk")
         count = 0
 
-        for x in self.board:
-            for y in self.board[x]:
+        for x in range(len(self.board)):
+            for y in range(len(self.board[x])):
                 if self.board[x][y] == "D":
                     count += 1
         if count == 0 and self.destroyer:
             self.destroyer = False
             return("destroyer sunk")
 
-        for x in self.board:
-            for y in self.board[x]:
+        for x in range(len(self.board)):
+            for y in range(len(self.board[x])):
                 if self.board[x][y] == "S":
                     count += 1
         if count == 0 and self.submarine:
             self.submarine = False
             return("submarine sunk")
 
-        for x in self.board:
-            for y in self.board[x]:
+        for x in range(len(self.board)):
+            for y in range(len(self.board[x])):
                 if self.board[x][y] == "C":
                     count += 1
         if count == 0 and self.cruiser:
             self.cruiser = False
             return("cruiser sunk")
 
-        for x in self.board:
-            for y in self.board[x]:
+        for x in range(len(self.board)):
+            for y in range(len(self.board[x])):
                 if self.board[x][y] == "A":
                     count += 1
         if count == 0 and self.aircraftCarrier:

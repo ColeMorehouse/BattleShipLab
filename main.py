@@ -15,47 +15,16 @@ player1 = Player(b1, b1g)
 #Create a hidden board for player 1 and player 2
 #Create player 1 and player 2
 
-def printEverything():
-    print("player 1 board: ")
-    player1.getB1().printBoard()
-    print("player 1 guessboard: ")
-    player1.getGb().printGb()
-    print("ai board: ")
-    player2.getBoard().printBoard()
-    print("ai guessboard: ")
-    player2.getGBoard().printBoard()
-
-player1.setUpBoard()
+#player1.setUpBoard()
 print("player 1 board: ")
-player1.getB1().printBoard()
+#().printBoard()
 print("player 1 guessboard: ")
 player1.getGb().printGb()
-
 player2 = ai(b2, b2g)
 print("ai board: ")
 player2.getBoard().printBoard()
-print("ai guessboard: ")
-player2.getGBoard().printBoard()
-
-win = False
-while not win:
-    print("Player 1: It's your turn. ")
-    row = input("Enter row of guess: ")
-    col = input("Enter column of guess: ")
-    player1.guessSpace(row, col, player2.getGBoard())
-
-    printEverything()
-    if player2.getBoard().checkWin() == True:
-        print("User player wins!!!")
-        win = True
-        exit()
-
-
-    print("Player 2: It's your turn. ")
-    player2.guessSpace(player1.getGb())
-
-    printEverything()
-    if player1.getB1().checkWin() == True:
-        print("AI player wins!!!")
-        win = True
-        exit()
+print("ai Guess Board: ")
+player2.getGBoard().printGb()
+player2.guessSpace()
+print("ai Guess Board: ")
+player2.getGBoard().printGb()
