@@ -18,8 +18,9 @@ class Board:
         for x in self.board:
             print(x)
 
-
-    def guess(self, r , c):
+    def guess(self, r , c):#NOTE: THIS IS y,x, NOT x,y
+        r = int(r)
+        c = int(c)
         if r < 0 or r > 9 or c < 0 or c > 9:
             return "out of bounds"
         if self.board[r][c] == "h" or self.board[r][c] == "m":
@@ -82,9 +83,9 @@ class Board:
     def placeShip(self, s, x, y):
         x = int(x)
         y = int(y)
-        if s.getDirection() == "down" and y + s.getLength() > 9:
+        if s.getDirection() == "down" and y + s.getLength() - 1 > 9:
             return "invalid location"
-        elif s.getDirection() == "right" and x + s.getLength() > 9:
+        elif s.getDirection() == "right" and x + s.getLength() - 1 > 9:
             return "invalid location"
         elif x < 0 or y < 0:
             return "invalid location"
@@ -107,7 +108,6 @@ class Board:
                 if self.board[y][x + a] != "~":
                     good = False
             if not good:
-                print("invalid location")
                 return "invalid location"
             else:
                 for b in range(s.getLength()):

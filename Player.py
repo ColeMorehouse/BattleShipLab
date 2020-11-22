@@ -1,6 +1,5 @@
 from Board import Board
 from Ships import ships
-
 class Player:
     def __init__(self, b1, b2):
         self.board1 = b1
@@ -73,22 +72,16 @@ class Player:
                 else:
                     print("invalid location")
 
-
-    def recieveGuess(self, row, column):
-        check = False
-        while not check:
-            answer = self.board1.guess(row, column)
-            if answer == "out of bounds" or answer == "already guessed":
-                return answer
-            else:
-                check = True
-        return answer
-
-    def guessSpace(self):
-        row = input("Enter row of guess: ")
-        column = input("Enter column of guess: ")
-        listGuess = {row, column}
-        return listGuess
+    def guessSpace(self, aiBoard):
+        x = input("enter an x value: ")
+        y = input("enter an y value: ")
+        strRet = aiBoard.guess(y,x)
+        if strRet == "out of bounds" or strRet == "already guessed":
+            print(strRet)
+            return self.guessSpace(aiBoard)
+        else:
+            self.board2.doGuess(y,x)
+            print(strRet)
 
     def getB1(self):
         return self.board1

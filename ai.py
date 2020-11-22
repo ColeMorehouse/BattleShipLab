@@ -36,9 +36,14 @@ class ai:
     def getGBoard(self):
         return self.board2
 
-    def guessSpace(self):
-        self.board1.guess(random.randint(0,9), random.randint(0,9))
-        self.board2.doGuess(random.randint(0,9), random.randint(0,9))
+    def guessSpace(self, b):
+        while True:
+            x = random.randint(0,9)
+            y = random.randint(0,9)
+            gRet = b.guess(x, y)
+            if gRet != "already guessed" and gRet != "out of bounds":
+                self.board2.doGuess(x, y)
+                return
 
 
 
