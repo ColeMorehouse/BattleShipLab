@@ -5,14 +5,28 @@ class Board:
         self.board = []
         for x in range(10):
             self.board.append(["~","~","~","~","~","~","~","~","~","~"])
-        destroyer = True
-        submarine = True
-        cruiser = True
-        battleship  = True
-        aircraftCarrier = True
+        self.destroyer = True
+        self.submarine = True
+        self.cruiser = True
+        self.battleship  = True
+        self.aircraftCarrier = True
   
     def getBoard(self):
         return self.board
+
+    def checkWin(self):
+        count = 0
+        for y in self.board:
+            for x in y:
+                if x == "~" or x == "m" or x == "h":
+                    continue
+                else:
+                    count += 1
+        if count > 0:
+            return False
+        else:
+            return True
+
 
     def printBoard(self):
         for x in self.board:

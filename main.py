@@ -37,10 +37,10 @@ while not win:
     print("ai's board after p1 guess: ")
     player2.getBoard().printBoard()
     
-    # if player2.getBoard().checkWin() == True:
-        #print("User player wins!!!")
-        #win = True
-        #exit()
+    if player2.getBoard().checkWin() == True:
+        print("User player wins!!!")
+        win = True
+        exit()
 
 
     print("Player 2: It's your turn. ")
@@ -50,7 +50,7 @@ while not win:
     print("player board after ai guess: ")
     player1.getB1().printBoard()
 
-    #if player1.getB1().checkWin() == True:
-        #print("AI player wins!!!")
-        #win = True
-        #exit()
+    if player1.getB1().checkWin() == True:
+        print("AI player wins!!!")
+        win = True
+        exit()
