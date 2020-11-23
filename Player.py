@@ -5,6 +5,15 @@ class Player:
         self.board1 = b1
         self.board2 = b2
 
+    def autoDraft(self):
+        self.board1.placeShip(ships("D", "right"), 0, 0)
+        self.board1.placeShip(ships("S", "right"), 0, 1)
+        self.board1.placeShip(ships("C", "right"), 0, 2)
+        self.board1.placeShip(ships("B", "right"), 0, 3)
+        self.board1.placeShip(ships("A", "right"), 0, 4)
+
+
+
     def setUpBoard(self):
 
         self.board1.printBoard()
