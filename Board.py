@@ -125,7 +125,7 @@ class gBoard:
     def doGuess(self, r, c, board):
         row = int(r)
         col = int(c)
-        self.targetBoard[row][col] = board.getBoard()[row][col]
+        self.targetBoard[row][col] = board[row][col]
 
     def getGb(self):
         return self.gB
