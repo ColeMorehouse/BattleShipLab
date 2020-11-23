@@ -25,11 +25,15 @@ print("ai board: ")
 player2.getBoard().printBoard()
 print("ai Guess Board: ")
 player2.getGBoard().printGb()
+
+
+print("ai's turn: ")
 player2.guessSpace(player1.getB1())
 print("ai Guess Board: ")
 player2.getGBoard().printGb()
 print("player board after ai guess: ")
 player1.getB1().printBoard()
+
 print("player 1's turn: ")
 player1.guessSpace(player2.getBoard())
 print("player 1's Guess Board: ")
