@@ -27,16 +27,29 @@ print("ai Guess Board: ")
 player2.getGBoard().printGb()
 
 
-print("ai's turn: ")
-player2.guessSpace(player1.getB1())
-print("ai Guess Board: ")
-player2.getGBoard().printGb()
-print("player board after ai guess: ")
-player1.getB1().printBoard()
+win = False
+while not win:
+    print("Player 1: It's your turn. ")
+    player1.guessSpace(player2.getBoard())
+    print("player 1's Guess Board: ")
+    player1.getGb().printGb()
+    print("ai's board after p1 guess: ")
+    player2.getBoard().printBoard()
+    
+    # if player2.getBoard().checkWin() == True:
+        #print("User player wins!!!")
+        #win = True
+        #exit()
 
-print("player 1's turn: ")
-player1.guessSpace(player2.getBoard())
-print("player 1's Guess Board: ")
-player1.getGb().printGb()
-print("ai's board after p1 guess: ")
-player2.getBoard().printBoard()
+
+    print("Player 2: It's your turn. ")
+    player2.guessSpace(player1.getB1())
+    print("ai Guess Board: ")
+    player2.getGBoard().printGb()
+    print("player board after ai guess: ")
+    player1.getB1().printBoard()
+
+    #if player1.getB1().checkWin() == True:
+        #print("AI player wins!!!")
+        #win = True
+        #exit()
