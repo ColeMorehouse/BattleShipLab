@@ -42,7 +42,7 @@ class ai:
             y = random.randint(0,9)
             gRet = b.guess(x, y)
             if gRet != "already guessed" and gRet != "out of bounds":
-                self.board2.doGuess(x, y)
+                self.board2.doGuess(x, y, b)
                 return
 
 
@@ -52,5 +52,3 @@ class ai:
 
 def LoR():
     return "down" if random.randint(0,1) else "right"
-
-
