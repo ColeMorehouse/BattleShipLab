@@ -122,15 +122,8 @@ class gBoard:
         for x in range(10):
             self.gB.append(["~","~","~","~","~","~","~","~","~","~"])
 
-    def doGuess(self, r, c):
-        g = self.targetBoard.guess(r, c)
-        if g == "miss":
-            self.gB[c][r] = "O"
-            return
-        elif g ==  "out of bounds" or g == "already guessed":
-            return
-        else:
-            self.gB[c][r] = "x"
+    def doGuess(self, r, c, board):
+        self.targetBoard[r][c] = board.getBoard()[r][c]
 
     def getGb(self):
         return self.gB
@@ -138,4 +131,3 @@ class gBoard:
     def printGb(self):
         for x in self.gB:
             print(x)
-            
