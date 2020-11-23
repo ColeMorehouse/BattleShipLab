@@ -80,7 +80,7 @@ class Player:
             print(strRet)
             return self.guessSpace(aiBoard)
         else:
-            self.board2.doGuess(y,x)
+            self.board2.doGuess(y,x,aiBoard)
             print(strRet)
 
     def getB1(self):
