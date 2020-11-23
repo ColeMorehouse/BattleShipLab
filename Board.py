@@ -123,7 +123,9 @@ class gBoard:
             self.gB.append(["~","~","~","~","~","~","~","~","~","~"])
 
     def doGuess(self, r, c, board):
-        self.targetBoard[r][c] = board.getBoard()[r][c]
+        row = int(r)
+        col = int(c)
+        self.targetBoard[row][col] = board.getBoard()[row][col]
 
     def getGb(self):
         return self.gB
