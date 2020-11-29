@@ -12,11 +12,14 @@ class ships:
         }
         self.length = lengths[t]
 
+    #accessor for length
     def getLength(self):
         return self.length
 
+    #accessor for type
     def getType(self):
         return self.type
 
+    #accessor for direction
     def getDirection(self):
         return self.direction

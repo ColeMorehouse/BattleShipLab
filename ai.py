@@ -36,19 +36,18 @@ class ai:
     def getGBoard(self):
         return self.board2
 
+    #Guesses a space
     def guessSpace(self, b):
+        #while everything is okey-dokey
         while True:
             x = random.randint(0,9)
             y = random.randint(0,9)
             gRet = b.guess(x, y)
+            #if the guess is invalid
             if gRet != "already guessed" and gRet != "out of bounds":
                 self.board2.doGuess(x, y, b)
                 return
 
-
-
-
-
-
+#Returns either down or right at random
 def LoR():
     return "down" if random.randint(0,1) else "right"

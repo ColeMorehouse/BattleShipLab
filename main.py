@@ -29,6 +29,7 @@ player2.getGBoard().printGb()
 
 
 win = False
+#runs while the game is still going
 while not win:
     print("Player 1: It's your turn. ")
     player1.guessSpace(player2.getBoard())
@@ -36,7 +37,8 @@ while not win:
     player1.getGb().printGb()
     print("ai's board after p1 guess: ")
     player2.getBoard().printBoard()
-    
+
+    #checks if the player has won
     if player2.getBoard().checkWin() == True:
         print("User player wins!!!")
         win = True
@@ -50,6 +52,7 @@ while not win:
     print("player board after ai guess: ")
     player1.getB1().printBoard()
 
+    #checks if the AI has won
     if player1.getB1().checkWin() == True:
         print("AI player wins!!!")
         win = True
