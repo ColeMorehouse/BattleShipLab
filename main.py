@@ -15,8 +15,8 @@ player1 = Player(b1, b1g)
 #Create a hidden board for player 1 and player 2
 #Create player 1 and player 2
 
-#player1.setUpBoard()
-player1.autoDraft()
+player1.setUpBoard()
+#player1.autoDraft()
 print("player 1 board: ")
 player1.getB1().printBoard()
 print("player 1 guessboard: ")
